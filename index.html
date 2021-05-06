@@ -5,30 +5,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/styles.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
   <script src="https://kit.fontawesome.com/8cbfcb4343.js" crossorigin="anonymous"></script>
   <title>Login Form</title>
 </head>
 <body>
 <div id="container">
   <div id="logo">
-    logo here
   </div>
   <form action="#" id="form">
     <div id="username">
-      <label for="username">Username</label><br>
-      <input type="text" id="username" name="username" autocomplete="off" required><br>
+      <label for="username">USERNAME</label><br>
+      <input type="text" id="username" name="username" autocomplete="off" required>
     </div>
+    <div id="line"></div>
     <div id="password">
-      <label for="password">Password</label><br>
-      <input type="password" id="password" name="password" minlength="5"><br><br>
+      <label for="password">PASSWORD</label><br>
+      <input type="password" id="password" name="password" minlength="5" required>
     </div>
-    <input type="submit" value="Submit" id="submit">
+      <div id="line"></div>
+      <p id="forgot"><a href="#">Forgot your password?</a></p>
+    <input type="submit" value="LOGIN" id="submit">
   </form>
-  <div id="socials">
-    <i class="fab fa-facebook-square"></i>
-    <i class="fab fa-twitter-square"></i>
-    <i class="fab fa-linkedin"></i>
+  <div id="bottom">
+    <p id="bottom-text">or sign in with</p>
+    <div id="socials">
+      <i class="fb fab fa-facebook-square"></i>
+      <i class="tw fab fa-twitter-square"></i>
+      <i class="ln fab fa-linkedin"></i>
+    </div>
   </div>
 </div>
 </body>

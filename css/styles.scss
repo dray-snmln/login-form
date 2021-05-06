@@ -1,8 +1,8 @@
-$bg-white: #f3f4f4;
-$bg-red: #ee6559;
-$bg-red0: #fac7c2;
-$bg-red1: #5a2015;
-$open: 'Open Sans';
+$white: #f3f4f4;
+$red: hsl(6, 78%, 57%);
+$redlight: hsl(6, 78%, 75%);
+$reddark: hsl(6, 63%, 46%);
+$font: 'Open Sans';
 @mixin center {
   display: grid;
   justify-content: center;
@@ -10,13 +10,14 @@ $open: 'Open Sans';
 }
 @mixin hover {
   &:not([disabled]):hover {
-    background-color: $bg-red0;
-    color: $bg-red1;
-    transition: ease-in 0.22s;
+    background-color: $redlight;
+    transition: ease-in 0.12s;
+    cursor: pointer;
   }
 }
 
 * {
+  font-family: $font;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -34,12 +35,12 @@ $open: 'Open Sans';
 
 #container {
   @include center;
-  width: 330px;
-  height: 450px;
-  background-color: $bg-white;
-  font-family: $open;
-  grid-template-rows: 15% 1fr 15%;
-  border-radius: 15px;
+  width: 380px;
+  height: 500px;
+  background-color: $white;
+  font-family: $font;
+  grid-template-rows: 1fr 3fr 1fr;
+  border-radius: 25px;
 
   #logo {
     text-align: center;
@@ -48,40 +49,93 @@ $open: 'Open Sans';
   #form {
     @include center;
     width: 300px;
-    margin: 10px;
 
-    div {
-      label {
-        margin-left: 5px;
-      }
-      line-height: 2rem;
-      margin: auto 0 20px;
-      padding: 20px;
-      width: 300px;
+    #line {
+      border-bottom: 2px solid $red;
+      width: 280px;
+      height: 2px;
+      padding: 0;
     }
 
-    div > input {
-      padding: 5px 12px;
-      grid-template-columns: 1fr;
-      border-radius: 5px;
-      border: 1px solid hsla(0, 0%, 50%, 0.24);
-      height: 35px;
+    #forgot,
+    #forgot a {
+      text-decoration: none;
+      margin: 11px auto auto 8px;
+      color: hsla(0, 0%, 50%, 1);
+      font-size: 0.8rem;
+    }
+
+    #forgot a:hover {
+      opacity: 70%;
+      transition: ease-in 0.15s;
+    }
+
+    div {
+      line-height: 2rem;
+      margin: auto;
+      padding-top: 10px;
+      width: 300px;
+
+      label {
+        margin-left: 15px;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        color: $reddark;
+      }
+
+      input,
+      input:focus {
+        padding: 5px 12px;
+        grid-template-columns: 1fr;
+        border: none;
+        outline: none;
+        height: 35px;
+        width: 100%;
+        background: none;
+        font-size: 1.3rem;
+      }
     }
 
     #submit {
-      padding: 5px;
-      margin: auto;
-      height: 35px;
-      width: 100px;
       @include hover;
+      color: white;
+      background-color: $red;
+      height: 43px;
+      width: calc(65%);
+      padding: 5px;
+      margin: 60px auto 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      font-family: $font;
+      font-weight: 600;
+      letter-spacing: 2px;
     }
   }
-  #socials {
+  #bottom {
     text-align: center;
-    font-size: 2rem;
-    color: hsla(0, 0%, 50%, 0.5);
-    i {
-      padding: 10px 5px;
+    font-size: 0.9rem;
+    #bottom-text {
+      color: hsla(0, 0%, 45%, 0.8);
+    }
+    #socials {
+      i {
+        font-size: 2.4rem;
+        color: hsla(0, 0%, 50%, 0.5);
+        padding: 10px 5px;
+        opacity: 70%;
+        cursor: pointer;
+        transition: ease-in 0.1s;
+      }
+      .fb:hover {
+        color: hsl(214, 89%, 42%);
+      }
+      .tw:hover {
+        color: hsl(203, 89%, 58%);
+      }
+      .ln:hover {
+        color: hsl(213, 63%, 43%);
+      }
     }
   }
 }
